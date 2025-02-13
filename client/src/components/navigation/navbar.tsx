@@ -1,22 +1,24 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { FileText, Telescope } from "lucide-react";
+import { FileText, Brain } from "lucide-react";
 
 export default function Navbar() {
   const [location] = useLocation();
 
   const links = [
-    { href: "/pdf-tools", label: "Study Materials", icon: FileText },
-    { href: "/science-qa", label: "Space Academy", icon: Telescope },
+    { href: "/pdf-tools", label: "PDF Tools", icon: FileText },
+    { href: "/science-qa", label: "Science Q&A", icon: Brain },
   ];
 
   return (
-    <nav className="border-b bg-card/60 backdrop-blur supports-[backdrop-filter]:bg-card/60">
+    <nav className="border-b border-primary/10 bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link href="/">
-            <a className="text-2xl font-bold text-primary">SpaceEdu</a>
+            <a className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
+              EduTools
+            </a>
           </Link>
 
           <div className="flex gap-4">
@@ -25,6 +27,7 @@ export default function Navbar() {
                 key={href}
                 variant={location === href ? "default" : "ghost"}
                 asChild
+                className="relative overflow-hidden group"
               >
                 <Link href={href}>
                   <a className={cn(
@@ -33,6 +36,7 @@ export default function Navbar() {
                   )}>
                     <Icon className="h-4 w-4" />
                     {label}
+                    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/10 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                 </Link>
               </Button>
