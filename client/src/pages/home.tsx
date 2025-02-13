@@ -1,23 +1,23 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { FileText, Brain } from "lucide-react";
+import { FileText, Telescope } from "lucide-react";
 
 export default function Home() {
   const features = [
     {
-      title: "PDF Exercise Tools",
-      description: "Create interactive fill-in-the-blank exercises from your PDF materials",
+      title: "Study Materials",
+      description: "Create interactive exercises from astronomy and space science materials",
       icon: FileText,
       href: "/pdf-tools",
-      image: "https://images.unsplash.com/photo-1535127022272-dbe7ee35cf33"
+      image: "https://images.unsplash.com/photo-1614732414444-096e5f1122d5"
     },
     {
-      title: "Science Q&A Assistant",
-      description: "Get expert answers to your 9th and 10th grade science questions",
-      icon: Brain,
+      title: "Space Academy",
+      description: "Explore space science with our comprehensive Q&A platform",
+      icon: Telescope,
       href: "/science-qa",
-      image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31"
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa"
     }
   ];
 
@@ -25,16 +25,16 @@ export default function Home() {
     <div className="max-w-5xl mx-auto">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight mb-4">
-          Interactive Learning Tools
+          Explore the Universe of Learning
         </h1>
         <p className="text-lg text-muted-foreground">
-          Enhance your learning experience with our educational tools
+          Your gateway to space science education
         </p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-8">
         {features.map((feature) => (
-          <Card key={feature.href} className="overflow-hidden">
+          <Card key={feature.href} className="overflow-hidden bg-card/60 backdrop-blur">
             <img
               src={feature.image}
               alt={feature.title}
@@ -45,7 +45,7 @@ export default function Home() {
               <h2 className="text-2xl font-semibold mb-2">{feature.title}</h2>
               <p className="text-muted-foreground mb-4">{feature.description}</p>
               <Button asChild>
-                <Link href={feature.href}>Get Started</Link>
+                <Link href={feature.href}>Begin Journey</Link>
               </Button>
             </CardContent>
           </Card>
