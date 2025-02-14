@@ -1,7 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { FileText, Brain } from "lucide-react";
+import { FileText, Brain, BookOpen } from "lucide-react";
 
 export default function Navbar() {
   const [location] = useLocation();
@@ -9,6 +9,7 @@ export default function Navbar() {
   const links = [
     { href: "/pdf-tools", label: "PDF Tools", icon: FileText },
     { href: "/science-qa", label: "Science Q&A", icon: Brain },
+    { href: "/ela-qa", label: "ELA Q&A", icon: BookOpen },
   ];
 
   return (

@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { FileText, Brain } from "lucide-react";
+import { FileText, Brain, BookOpen } from "lucide-react";
 
 export default function Home() {
   const features = [
@@ -18,6 +18,13 @@ export default function Home() {
       icon: Brain,
       href: "/science-qa",
       image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31"
+    },
+    {
+      title: "ELA Q&A Assistant",
+      description: "Expert help with literature, grammar, and writing questions",
+      icon: BookOpen,
+      href: "/ela-qa",
+      image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d"
     }
   ];
 
@@ -38,7 +45,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {features.map((feature) => (
           <Card key={feature.href} className="overflow-hidden group backdrop-blur bg-card/50 hover:bg-card/60 transition-colors border border-primary/10">
             <img

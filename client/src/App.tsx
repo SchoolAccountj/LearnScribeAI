@@ -6,6 +6,7 @@ import Navbar from "@/components/navigation/navbar";
 import Home from "@/pages/home";
 import PdfTools from "@/pages/pdf-tools";
 import ScienceQA from "@/pages/science-qa";
+import ELAQA from "@/pages/ela-qa";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -14,6 +15,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/pdf-tools" component={PdfTools} />
       <Route path="/science-qa" component={ScienceQA} />
+      <Route path="/ela-qa" component={ELAQA} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -36,11 +36,18 @@ export type Question = typeof questions.$inferSelect;
 export type InsertQuestion = z.infer<typeof insertQuestionSchema>;
 
 export const subjects = [
-  "Astronomy",
-  "Planetary Science",
-  "Space Technology",
-  "Astrophysics",
-  "Space Exploration"
+  // Science subjects
+  "Physics",
+  "Chemistry",
+  "Biology",
+  "Mathematics",
+  "General Science",
+  // ELA subjects
+  "Literature",
+  "Grammar",
+  "Writing",
+  "Reading Comprehension",
+  "Vocabulary"
 ] as const;
 
 export const subjectSchema = z.enum(subjects);
